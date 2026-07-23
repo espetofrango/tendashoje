@@ -1,0 +1,262 @@
+---
+// src/components/Testimonials.astro
+const testimonials = [
+  {
+    quote: "A Tendas Hoje mais uma vez me surpreendeu, entrega pontual e me gerou muita tranquilidade em todo o processo de locação.",
+    name: "Ana Rodrigues",
+    role: "Organizadora de Eventos",
+    initials: "AR",
+    avatarBg: "#F59E0B",
+    highlight: false,
+  },
+  {
+    quote: "Fiquei horas para escolher em qual empresa alugar, mas uma amiga me disse que já havia alugado com a Tendas Hoje e aí tomei minha decisão. Não me arrependi, nota 10 para eles, alugarei mais vezes.",
+    name: "Bruno Carvalho",
+    role: "Comerciante",
+    initials: "BC",
+    avatarBg: "#2563EB",
+    highlight: true,
+  },
+  {
+    quote: "Minha igreja estava à procura de uma tenda, e eles foram os únicos que conseguiram nos sanar dúvidas e realmente demonstraram conhecimento técnico. Foi um sucesso nosso evento. Valeu!",
+    name: "Camila Torres",
+    role: "Coordenadora Comunitária",
+    initials: "CT",
+    avatarBg: "#25D366",
+    highlight: false,
+  }
+];
+---
+
+<section id="depoimentos" class="testimonials-section">
+  <div class="container">
+    <div class="header-section fade-up">
+      <span class="label">DEPOIMENTOS</span>
+      <h2>O Que Nossos Clientes Dizem</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      {testimonials.map((testimonial, index) => (
+        <div class={`testimonial-card fade-up delay-${index + 1} ${testimonial.highlight ? 'highlighted' : ''}`}>
+          <div class="quote-mark">“</div>
+          <div class="stars">★★★★★</div>
+          <p class="quote-text">"{testimonial.quote}"</p>
+          <div class="author-info">
+            <div class="avatar" style={`background-color: ${testimonial.avatarBg};`}>
+              {testimonial.initials}
+            </div>
+            <div class="author-details">
+              <strong>{testimonial.name}</strong>
+              <span>{testimonial.role}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    background: linear-gradient(135deg, #0F172A, #1E293B);
+    padding: 5rem 1.5rem;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header-section {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .label {
+    display: inline-block;
+    color: #F59E0B;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+  }
+
+  .header-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .testimonial-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .testimonial-card.highlighted {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.3);
+    z-index: 2;
+  }
+
+  .testimonial-card.highlighted:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.25);
+  }
+
+  @media (max-width: 767px) {
+    .testimonial-card.highlighted {
+      transform: none;
+    }
+    .testimonial-card.highlighted:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .quote-mark {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 8rem;
+    line-height: 1;
+    font-family: serif;
+    color: #F59E0B;
+    opacity: 0.15;
+    z-index: -1;
+  }
+
+  .stars {
+    color: #F59E0B;
+    font-size: 1.25rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #E2E8F0;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .author-details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .author-details strong {
+    font-size: 1.125rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .author-details span {
+    font-size: 0.875rem;
+    color: #94A3B8;
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.3s; }
+  .delay-3 { transition-delay: 0.5s; }
+
+  @media (max-width: 768px) {
+    .header-section h2 {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<script>
+  const setupObserver = () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.fade-up');
+    animatedElements.forEach(el => observer.observe(el));
+  };
+
+  setupObserver();
+  document.addEventListener('astro:page-load', setupObserver);
+</script>

@@ -1,0 +1,387 @@
+---
+export interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Aluguel de Tendas para Eventos RJ | Tendas Hoje - Precisa de tenda? Resolvemos hoje.", 
+	description = "Aluguel de tendas para eventos no Rio de Janeiro. Precisa de tenda? Resolvemos hoje! Especialistas em montagem rápida de tendas, mesas e cadeiras (Marcelo mesas). Atendimento rápido e seguro."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://tendashoje.com.br');
+const imageURL = new URL('/logo.png', canonicalURL);
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta name="author" content="Tendas Hoje" />
+	
+	<!-- Canonical URL -->
+	<link rel="canonical" href={canonicalURL} />
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="/logo.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+	
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={canonicalURL} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:image" content={imageURL} />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content={canonicalURL} />
+	<meta property="twitter:title" content={title} />
+	<meta property="twitter:description" content={description} />
+	<meta property="twitter:image" content={imageURL} />
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+
+	<!-- Schema.org JSON-LD -->
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Tendas Hoje",
+			"image": "https://tendashoje.com.br/logo.png",
+			"@id": "https://tendashoje.com.br",
+			"url": "https://tendashoje.com.br",
+			"telephone": "+5521999999999",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "Rua Exemplo, 123",
+				"addressLocality": "Rio de Janeiro",
+				"addressRegion": "RJ",
+				"postalCode": "00000-000",
+				"addressCountry": "BR"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": -22.9068467,
+				"longitude": -43.1728965
+			},
+			"openingHoursSpecification": {
+				"@type": "OpeningHoursSpecification",
+				"dayOfWeek": [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+					"Saturday",
+					"Sunday"
+				],
+				"opens": "00:00",
+				"closes": "23:59"
+			},
+			"sameAs": [
+				"https://www.facebook.com/tendashoje",
+				"https://www.instagram.com/tendashoje"
+			],
+			"description": "Aluguel de tendas para eventos no Rio de Janeiro. Precisa de tenda? Resolvemos hoje! Também oferecemos aluguel de mesas e cadeiras Marcelo mesas."
+		}
+	</script>
+</head>
+<body>
+	<header class="header" id="header">
+		<div class="header-container">
+			<a href="/" class="logo">
+				<img src="/logo.png" alt="Tendas Hoje Logo" />
+			</a>
+
+			<button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+				<span class="hamburger-line"></span>
+			</button>
+
+			<nav class="nav-menu">
+				<ul class="nav-list">
+					<li><a href="#inicio" class="nav-link">Início</a></li>
+					<li><a href="#servicos" class="nav-link">Serviços</a></li>
+					<li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
+					<li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+					<li><a href="#precos" class="nav-link">Preços</a></li>
+					<li><a href="#blog" class="nav-link">Blog</a></li>
+				</ul>
+				<a href="https://wa.me/5521999999999?text=Olá,%20preciso%20de%20uma%20tenda%20hoje!" class="cta-button" target="_blank" rel="noopener noreferrer">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+					</svg>
+					Chamar no WhatsApp
+				</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<slot />
+	</main>
+
+	<script>
+		// Mobile Menu Toggle
+		const mobileBtn = document.querySelector('.mobile-menu-btn');
+		const navMenu = document.querySelector('.nav-menu');
+		const header = document.querySelector('.header');
+		const navLinks = document.querySelectorAll('.nav-link');
+
+		if (mobileBtn && navMenu) {
+			mobileBtn.addEventListener('click', () => {
+				const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+				mobileBtn.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+				navMenu.classList.toggle('active');
+				document.body.classList.toggle('no-scroll');
+			});
+		}
+
+		// Close mobile menu when a link is clicked
+		navLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				if (navMenu.classList.contains('active')) {
+					mobileBtn.setAttribute('aria-expanded', 'false');
+					navMenu.classList.remove('active');
+					document.body.classList.remove('no-scroll');
+				}
+			});
+		});
+
+		// Header Glassmorphism Effect on Scroll
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 20) {
+				header.classList.add('scrolled');
+			} else {
+				header.classList.remove('scrolled');
+			}
+		});
+	</script>
+</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-primary: #0F172A;
+		--color-secondary: #F59E0B;
+		--color-accent: #FF6B00;
+		--color-blue: #2563EB;
+		--color-green: #25D366;
+		--color-bg: #FFFFFF;
+		--color-bg-alt: #F8FAFC;
+		--color-bg-dark: #0F172A;
+		--color-text: #0F172A;
+		--color-text-light: #FFFFFF;
+		--color-text-muted: #334155;
+		--color-border: rgba(15, 23, 42, 0.08);
+		--font-display: 'Syne', sans-serif;
+		--font-body: 'DM Sans', sans-serif;
+		--radius: 16px;
+		--radius-sm: 8px;
+		--shadow-glow: 0 0 40px rgba(245, 158, 11, 0.3);
+		--max-width: 1180px;
+		--section-padding: clamp(80px, 12vw, 140px);
+	}
+
+	*, *::before, *::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: var(--font-body);
+		background-color: var(--color-bg);
+		color: var(--color-text);
+		line-height: 1.6;
+		overflow-x: hidden;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body.no-scroll {
+		overflow: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: var(--font-display);
+		font-weight: 700;
+		line-height: 1.2;
+		color: var(--color-primary);
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	/* Header Styles */
+	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		transition: all 0.3s ease;
+		background: transparent;
+	}
+
+	.header.scrolled {
+		background: rgba(255, 255, 255, 0.85);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.header-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: var(--max-width);
+		margin: 0 auto;
+		padding: 1rem 2rem;
+		height: 80px;
+	}
+
+	.logo img {
+		max-height: 45px;
+		width: auto;
+	}
+
+	.nav-menu {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.nav-list {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.nav-link {
+		font-weight: 500;
+		color: var(--color-text);
+		transition: color 0.2s ease;
+		font-size: 1rem;
+	}
+
+	.nav-link:hover {
+		color: var(--color-accent);
+	}
+
+	.cta-button {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		background-color: var(--color-green);
+		color: var(--color-text-light);
+		padding: 0.75rem 1.5rem;
+		border-radius: 50px;
+		font-weight: 700;
+		font-family: var(--font-body);
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+	}
+
+	.cta-button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+		color: white;
+	}
+
+	.mobile-menu-btn {
+		display: none;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 30px;
+		height: 21px;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		z-index: 1001;
+	}
+
+	.hamburger-line {
+		width: 100%;
+		height: 3px;
+		background-color: var(--color-primary);
+		border-radius: 3px;
+		transition: all 0.3s ease;
+	}
+
+	/* Mobile Menu Styles */
+	@media (max-width: 992px) {
+		.mobile-menu-btn {
+			display: flex;
+		}
+
+		.nav-menu {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 100%;
+			height: 100vh;
+			background-color: var(--color-bg);
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+			box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+		}
+
+		.nav-menu.active {
+			right: 0;
+		}
+
+		.nav-list {
+			flex-direction: column;
+			gap: 2rem;
+			margin-bottom: 2rem;
+			text-align: center;
+		}
+
+		.nav-link {
+			font-size: 1.5rem;
+			font-family: var(--font-display);
+			font-weight: 700;
+		}
+
+		/* Hamburger Animation */
+		.mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+			transform: translateY(9px) rotate(45deg);
+		}
+		
+		.mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+			opacity: 0;
+		}
+		
+		.mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+			transform: translateY(-9px) rotate(-45deg);
+		}
+	}
+</style>

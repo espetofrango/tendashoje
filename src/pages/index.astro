@@ -1,0 +1,29 @@
+---
+// arquivo: src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+import BlogPreview from '../components/BlogPreview.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <main>
+    <Hero />
+    <Features />
+    <HowItWorks />
+    <Testimonials />
+    <Pricing />
+    <BlogPreview />
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  main {
+    overflow-x: hidden;
+  }
+</style>

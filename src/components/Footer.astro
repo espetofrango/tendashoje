@@ -1,0 +1,324 @@
+---
+// src/components/Footer.astro
+---
+
+<section class="cta-section">
+  <div class="cta-overlay"></div>
+  <div class="cta-container">
+    <h2 class="cta-headline">Pronto para Cobrir Seu Evento?</h2>
+    <p class="cta-subtitle">Entre em contato agora e garanta sua tenda com pronta entrega no Rio de Janeiro. Atendimento rápido via WhatsApp.</p>
+    
+    <a href="https://wa.me/5521999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20tenda" class="cta-button" target="_blank" rel="noopener noreferrer">
+      Chamar no WhatsApp &rarr;
+    </a>
+    
+    <div class="cta-badges">
+      <span>&#10003; Pronta entrega</span>
+      <span class="dot">&middot;</span>
+      <span>&#10003; Montagem inclusa</span>
+      <span class="dot">&middot;</span>
+      <span>&#10003; Melhor custo-benefício</span>
+    </div>
+    
+    <p class="cta-phone">Ou ligue: (21) 99999-9999</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo.png" alt="Tendas Hoje" class="footer-logo" />
+        <p class="footer-tagline">Precisa de tenda? Resolvemos hoje.</p>
+      </div>
+      
+      <div class="footer-links-group">
+        <div class="footer-column">
+          <h3>Serviços</h3>
+          <ul>
+            <li><a href="#">Tendas Sanfonadas</a></li>
+            <li><a href="#">Tendas Pantográficas</a></li>
+            <li><a href="#">Tendas para Festas</a></li>
+            <li><a href="#">Mesas e Cadeiras</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Empresa</h3>
+          <ul>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Regiões Atendidas</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+            <li><a href="#">Política de Cancelamento</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2025 Tendas Hoje - Aluguel de Tendas RJ. Todos os direitos reservados.</p>
+      
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-micro">
+      <p>aluguel de mesas e cadeiras Marcelo mesas</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /* CTA Section */
+  .cta-section {
+    position: relative;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  
+  .cta-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  
+  .cta-headline {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+  
+  .cta-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    opacity: 0.7;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    background-color: #22c35e;
+  }
+  
+  .cta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-badges .dot {
+    opacity: 0.5;
+  }
+  
+  .cta-phone {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+
+  /* Footer */
+  .site-footer {
+    background-color: #050508;
+    color: white;
+    padding: 5rem 2rem 2rem;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .footer-top {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  .footer-brand {
+    max-width: 300px;
+  }
+  
+  .footer-logo {
+    max-height: 40px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 1rem;
+  }
+  
+  .footer-tagline {
+    opacity: 0.7;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .footer-links-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    width: 100%;
+  }
+  
+  @media (min-width: 640px) {
+    .footer-links-group {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .footer-links-group {
+      width: 60%;
+    }
+  }
+  
+  .footer-column h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .footer-column a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+  }
+  
+  .footer-column a:hover {
+    color: #fff;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+  
+  .copyright {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .social-icons a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .social-icons svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .footer-micro {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .footer-micro p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+</style>

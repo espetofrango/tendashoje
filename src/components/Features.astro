@@ -1,0 +1,203 @@
+---
+const services = [
+  {
+    title: "Tendas Sanfonadas",
+    description: "Estruturas práticas e versáteis, ideais para feiras, eventos corporativos e festas ao ar livre. Montagem rápida e fácil.",
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`
+  },
+  {
+    title: "Tendas Pantográficas",
+    description: "Tendas de alta resistência com estrutura reforçada. Perfeitas para eventos de maior porte e uso prolongado.",
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><path d="M22 2 2 22"/><path d="M2 2l20 20"/></svg>`
+  },
+  {
+    title: "Tendas para Festas",
+    description: "Coberturas elegantes para festas de aniversário, casamentos e confraternizações. Proteção contra sol e chuva com estilo.",
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13V2"/><path d="m4 6 4-4 4 4"/><path d="m16 6 4-4 4 4"/><path d="M4 18l4 4 4-4"/><path d="M16 18l4 4 4-4"/></svg>`
+  },
+  {
+    title: "Tendas para Feiras",
+    description: "Estruturas profissionais para feiras livres, artesanais e gastronômicas. Destaque seu estande com nossas tendas.",
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`
+  },
+  {
+    title: "Pronta Entrega",
+    description: "Atendimento ágil com entrega no mesmo dia para o Rio de Janeiro e região metropolitana. Rapidez que você precisa.",
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>`
+  },
+  {
+    title: "Mesas e Cadeiras",
+    description: "Além de tendas, oferecemos aluguel de mesas e cadeiras para complementar a estrutura do seu evento.",
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18"/><path d="M3 14v4"/><path d="M21 14v4"/><path d="M6 10v10"/><path d="M18 10v10"/></svg>`
+  }
+];
+---
+
+<section class="features-section" id="servicos">
+  <div class="container">
+    <div class="header">
+      <span class="label">NOSSOS SERVIÇOS</span>
+      <h2>Soluções Completas em Tendas para Seu Evento</h2>
+      <p class="subtitle">Oferecemos uma variedade de tendas e estruturas para todos os tipos de eventos no Rio de Janeiro.</p>
+    </div>
+
+    <div class="grid">
+      {services.map((service, index) => (
+        <div class="card fade-up-element" style={`--animation-order: ${index};`}>
+          <div class="icon-wrapper" set:html={service.icon} />
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --color-primary: #0F172A;
+    --color-muted: #334155;
+    --color-accent: #F59E0B;
+    --bg-light: #F8FAFC;
+    --border-color: rgba(15, 23, 42, 0.1);
+  }
+
+  .features-section {
+    background-color: var(--bg-light);
+    padding: 5rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .header h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    color: var(--color-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.2), 0 8px 10px -6px rgba(245, 158, 11, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .icon-wrapper {
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .card p {
+    font-size: 1rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* When the observer triggers the .visible class */
+  .fade-up-element.visible {
+    animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--animation-order) * 0.1s);
+  }
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('.fade-up-element');
+    elements.forEach(el => observer.observe(el));
+  });
+</script>

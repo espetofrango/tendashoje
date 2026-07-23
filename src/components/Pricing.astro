@@ -1,0 +1,379 @@
+---
+// src/components/Pricing.astro
+
+const phoneNumber = "5521900000000";
+
+const plans = [
+  {
+    name: "Básico",
+    price: "A partir de R$ 150",
+    description: "Tenda simples",
+    highlight: false,
+    features: [
+      { text: "Tenda sanfonada 3x3", included: true },
+      { text: "Montagem inclusa", included: true },
+      { text: "Entrega RJ", included: true },
+      { text: "Suporte via WhatsApp", included: true },
+      { text: "Mesas e cadeiras incluídas", included: false },
+      { text: "Cobertura para chuva reforçada", included: false }
+    ],
+    cta: "Solicitar Orçamento",
+    message: "Olá, gostaria de saber mais sobre o plano Básico."
+  },
+  {
+    name: "Completo",
+    badge: "Mais popular",
+    price: "A partir de R$ 350",
+    description: "Pacote completo",
+    highlight: true,
+    features: [
+      { text: "Tenda sanfonada 5x5", included: true },
+      { text: "Montagem + desmontagem", included: true },
+      { text: "Entrega RJ + região metropolitana", included: true },
+      { text: "Mesas e cadeiras incluídas", included: true },
+      { text: "Cobertura para chuva reforçada", included: true },
+      { text: "WhatsApp prioritário", included: true }
+    ],
+    cta: "Quero este pacote",
+    message: "Olá, gostaria de contratar o pacote Completo."
+  },
+  {
+    name: "Premium",
+    price: "Sob consulta",
+    description: "Evento personalizado",
+    highlight: false,
+    features: [
+      { text: "Tendas múltiplas", included: true },
+      { text: "Projeto personalizado", included: true },
+      { text: "Atendimento VIP", included: true },
+      { text: "Mesas, cadeiras e decoração", included: true },
+      { text: "Seguro e backup de estrutura", included: true },
+      { text: "Gerente dedicado", included: true }
+    ],
+    cta: "Falar com especialista",
+    message: "Olá, gostaria de falar com um especialista sobre o pacote Premium."
+  }
+];
+---
+
+<section class="pricing-section" id="precos">
+  <div class="pricing-container">
+    <div class="pricing-header fade-up">
+      <span class="label">NOSSOS PLANOS</span>
+      <h2>Escolha o Pacote Ideal para Seu Evento</h2>
+      <p>Oferecemos opções flexíveis para todos os tamanhos de evento.</p>
+    </div>
+
+    <div class="pricing-grid">
+      {plans.map((plan, index) => (
+        <div 
+          class={`pricing-card fade-up ${plan.highlight ? 'highlight' : ''}`}
+          style={`--delay: ${index * 0.15}s`}
+        >
+          {plan.badge && <div class="badge">{plan.badge}</div>}
+          
+          <div class="card-header">
+            <h3>{plan.name}</h3>
+            <p class="description">{plan.description}</p>
+            <div class="price">
+              <span>{plan.price}</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <ul class="features-list">
+              {plan.features.map(feature => (
+                <li class={feature.included ? 'included' : 'excluded'}>
+                  {feature.included ? (
+                    <svg class="icon check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  ) : (
+                    <svg class="icon cross" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  )}
+                  <span>{feature.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="card-footer">
+            <a 
+              href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(plan.message)}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="cta-btn"
+            >
+              {plan.cta}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-section {
+    background-color: #F8FAFC;
+    padding: 5rem 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #F59E0B;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+  }
+
+  .pricing-header h2 {
+    font-size: 2.5rem;
+    color: #0F172A;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+
+  .pricing-header p {
+    font-size: 1.125rem;
+    color: #64748B;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+  }
+
+  .pricing-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .pricing-card:not(.highlight):hover {
+    border-color: #F59E0B;
+    box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.2), 0 8px 10px -6px rgba(245, 158, 11, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .pricing-card.highlight {
+    background: #F59E0B;
+    color: #FFFFFF;
+    border: none;
+    transform: scale(1);
+    box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.3), 0 10px 10px -5px rgba(245, 158, 11, 0.1);
+    z-index: 1;
+  }
+
+  @media (min-width: 768px) {
+    .pricing-card.highlight {
+      transform: scale(1.05);
+    }
+    .pricing-card.highlight:hover {
+      transform: scale(1.08);
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0F172A;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+    padding-bottom: 2rem;
+  }
+
+  .highlight .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: inherit;
+  }
+
+  .pricing-card:not(.highlight) .card-header h3 {
+    color: #0F172A;
+  }
+
+  .description {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .price {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .pricing-card:not(.highlight) .price {
+    color: #0F172A;
+  }
+
+  .card-body {
+    flex-grow: 1;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .pricing-card:not(.highlight) .features-list li {
+    color: #334155;
+  }
+
+  .features-list li.excluded {
+    opacity: 0.5;
+  }
+
+  .icon {
+    flex-shrink: 0;
+  }
+
+  .icon.check {
+    color: #25D366;
+  }
+
+  .highlight .icon.check {
+    color: #FFFFFF;
+  }
+
+  .icon.cross {
+    color: #EF4444;
+  }
+
+  .card-footer {
+    margin-top: 2.5rem;
+  }
+
+  .cta-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .pricing-card:not(.highlight) .cta-btn {
+    background: #F1F5F9;
+    color: #0F172A;
+  }
+
+  .pricing-card:not(.highlight) .cta-btn:hover {
+    background: #E2E8F0;
+    color: #F59E0B;
+  }
+
+  .highlight .cta-btn {
+    background: #FFFFFF;
+    color: #F59E0B;
+  }
+
+  .highlight .cta-btn:hover {
+    background: #F8FAFC;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animation Styles */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition-delay: var(--delay, 0s);
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const elementsToAnimate = document.querySelectorAll('.fade-up');
+    elementsToAnimate.forEach(el => observer.observe(el));
+  });
+</script>

@@ -1,0 +1,304 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="hero-section" id="inicio">
+  <div class="noise-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge fade-in-up delay-1">
+        <span class="badge-icon">✦</span> Tendas Hoje · Pronta Entrega RJ
+      </div>
+      
+      <h1 class="fade-in-up delay-2">
+        Aluguel de Tendas para Festas e Eventos no RJ
+      </h1>
+      
+      <p class="subtitle fade-in-up delay-3">
+        Especialistas em tendas sanfonadas e pantográficas no Rio de Janeiro. Pronta entrega, atendimento rápido via WhatsApp e estruturas resistentes contra sol e chuva.
+      </p>
+      
+      <div class="button-group fade-in-up delay-4">
+        <a href="https://wa.me/5521999999999" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Chamar no WhatsApp &rarr;
+        </a>
+        <a href="#servicos" class="btn btn-secondary">
+          Ver nossos serviços
+        </a>
+      </div>
+      
+      <div class="social-proof fade-in-up delay-5">
+        <div class="avatar-group">
+          <div class="avatar" style="background-color: var(--color-secondary);"></div>
+          <div class="avatar" style="background-color: var(--color-blue);"></div>
+          <div class="avatar" style="background-color: var(--color-green);"></div>
+        </div>
+        <span>Mais de 10.000 montagens realizadas</span>
+      </div>
+    </div>
+    
+    <div class="hero-image-wrapper fade-in-up delay-6">
+      <img src="/images/tendas-aluguel-para-festas-e-eventos.png" alt="Tendas aluguel para festas e eventos no RJ" class="hero-image" />
+      
+      <div class="floating-card">
+        <span class="stat">+127%</span>
+        <span class="stat-text">de eventos cobertos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --color-primary: #0F172A;
+    --color-secondary: #F59E0B;
+    --color-green: #25D366;
+    --color-blue: #2563EB;
+    --text-light: #F8FAFC;
+    --text-muted: #CBD5E1;
+  }
+
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 30% 70%, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 1) 40%, rgba(245, 158, 11, 0.2) 100%),
+                radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.3) 0%, rgba(15, 23, 42, 1) 60%);
+    background-color: var(--color-primary);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+    overflow: hidden;
+    padding: 120px 20px 60px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .noise-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    margin-bottom: 24px;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+    animation: glowBorder 3s infinite alternate;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 800;
+    color: var(--text-light);
+    line-height: 1.1;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    font-size: clamp(18px, 2vw, 20px);
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 40px;
+    max-width: 600px;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background-color: var(--color-green);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-primary:hover {
+    background-color: #1ebc5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary:hover {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+  }
+
+  .social-proof {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .avatar-group {
+    display: flex;
+  }
+
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    margin-left: -12px;
+  }
+
+  .avatar:first-child { margin-left: 0; }
+
+  .hero-image-wrapper {
+    display: none;
+    position: relative;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+  }
+
+  .floating-card {
+    position: absolute;
+    bottom: -20px;
+    left: -40px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .stat {
+    color: var(--color-secondary);
+    font-size: 32px;
+    font-weight: 800;
+    font-family: 'Syne', sans-serif;
+    line-height: 1;
+  }
+
+  .stat-text {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes glowBorder {
+    0% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.2); border-color: rgba(245, 158, 11, 0.3); }
+    100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.6); border-color: rgba(245, 158, 11, 0.8); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+  .delay-5 { animation-delay: 0.5s; }
+  .delay-6 { animation-delay: 0.6s; }
+
+  /* Desktop */
+  @media (min-width: 992px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .hero-content {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .button-group {
+      flex-direction: row;
+      max-width: none;
+    }
+
+    .hero-image-wrapper {
+      display: block;
+    }
+  }
+</style>

@@ -1,0 +1,314 @@
+---
+---
+
+<section id="como-funciona" class="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">COMO FUNCIONA</span>
+      <h2>Seu Evento Coberto em 3 Passos Simples</h2>
+    </div>
+
+    <div class="steps-wrapper">
+      <!-- Desktop connector line -->
+      <svg class="connector-line desktop-only" viewBox="0 0 1000 10" preserveAspectRatio="none">
+        <line x1="0" y1="5" x2="1000" y2="5" stroke="#F59E0B" stroke-width="2" stroke-dasharray="10 10" />
+      </svg>
+      <!-- Mobile connector line -->
+      <div class="connector-line-mobile mobile-only"></div>
+
+      <div class="steps-grid">
+        <div class="step-item fade-in-step">
+          <div class="step-bg-number">01</div>
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <h3>Entre em Contato</h3>
+            <p>Nos chame no WhatsApp ou preencha nosso formulário. Descreva seu evento, data e local que faremos um orçamento na hora.</p>
+          </div>
+        </div>
+
+        <div class="step-item fade-in-step" style="transition-delay: 200ms;">
+          <div class="step-bg-number">02</div>
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 22h20L12 2z"></path>
+                <path d="M12 2v20"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <h3>Escolha sua Tenda</h3>
+            <p>Ajudamos você a escolher o modelo e tamanho ideal para o seu evento. Tendas de 2x2m até 10x10m disponíveis.</p>
+          </div>
+        </div>
+
+        <div class="step-item fade-in-step" style="transition-delay: 400ms;">
+          <div class="step-bg-number">03</div>
+          <div class="step-icon-wrapper">
+            <div class="step-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+          </div>
+          <div class="step-content">
+            <h3>Entrega e Montagem</h3>
+            <p>Levamos e montamos a tenda no local do evento. Pontualidade e profissionalismo garantidos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    background-color: #0F172A;
+    padding: 6rem 1rem;
+    overflow: hidden;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .label {
+    display: inline-block;
+    color: #F59E0B;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .steps-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .connector-line {
+    position: absolute;
+    top: 40px;
+    left: 16%;
+    width: 68%;
+    height: 10px;
+    z-index: 1;
+  }
+
+  .connector-line line {
+    stroke-dasharray: 10 10;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 1.5s ease-in-out;
+  }
+
+  .steps-wrapper.is-visible .connector-line line {
+    stroke-dashoffset: 0;
+  }
+
+  .connector-line-mobile {
+    display: none;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-item {
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .steps-wrapper.is-visible .step-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .step-bg-number {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Syne', sans-serif;
+    font-size: 8rem;
+    font-weight: 800;
+    color: #F59E0B;
+    opacity: 0.3;
+    z-index: -1;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .step-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #F59E0B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 10px rgba(245, 158, 11, 0.1);
+  }
+
+  .step-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-content h3 {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .step-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .section-header h2 {
+      font-size: 2rem;
+    }
+    
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-only {
+      display: block;
+    }
+
+    .steps-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding-left: 2rem;
+    }
+
+    .connector-line-mobile {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 38px;
+      width: 2px;
+      background-image: linear-gradient(to bottom, #F59E0B 50%, transparent 50%);
+      background-size: 2px 20px;
+      background-position: top;
+      background-repeat: repeat-y;
+      z-index: 1;
+      height: 0;
+      transition: height 1.5s ease-in-out;
+    }
+
+    .steps-wrapper.is-visible .connector-line-mobile {
+      height: 100%;
+    }
+
+    .step-item {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step-icon-wrapper {
+      justify-content: flex-start;
+      margin-left: 0;
+    }
+
+    .step-bg-number {
+      left: -20px;
+      top: -30px;
+      transform: none;
+      font-size: 6rem;
+    }
+
+    .step-icon {
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.1);
+    }
+    
+    .step-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+</style>
+
+<script>
+  const setupObserver = () => {
+    const wrapper = document.querySelector('.steps-wrapper');
+    
+    if (!wrapper) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Optional: stop observing once animated
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2, // Trigger when 20% of the element is visible
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    observer.observe(wrapper);
+  };
+
+  // Run on initial load
+  setupObserver();
+
+  // Re-run if Astro uses view transitions
+  document.addEventListener('astro:page-load', setupObserver);
+</script>

@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: 'Aluguel de Tendas em Anchieta RJ: Guia Completo para Seu Evento',
+    description: 'Tudo o que você precisa saber sobre locação de tendas em Anchieta, Rio de Janeiro. Preços, tipos e como contratar com segurança.',
+    url: '/blog/aluguel-de-tendas-anchieta-rj',
+    image: '/images/aluguel-de-tendas-rj.png',
+    date: '22 de Julho de 2025'
+  },
+  {
+    title: 'Aluguel de Cadeiras em Anchieta: Tudo Que Você Precisa Saber',
+    description: 'Guia completo sobre aluguel de cadeiras e mesas para eventos em Anchieta. Tipos, preços e dicas para sua festa.',
+    url: '/blog/aluguel-de-cadeiras-anchieta-rj',
+    image: '/images/aluguel-de-barracas-para-feiras-e-eventos.png',
+    date: '20 de Julho de 2025'
+  },
+  {
+    title: 'Aluguel de Gelo em Anchieta RJ: Entrega Rápida para Eventos',
+    description: 'Saiba como garantir a entrega de gelo rápido e barato em Anchieta para o seu evento. Tipos de gelo e como calcular a quantidade.',
+    url: '/blog/aluguel-de-gelo-anchieta-rj',
+    image: '/images/locacao-de-tendas-rj.png',
+    date: '18 de Julho de 2025'
+  }
+];
+---
+
+<Layout title="Blog - Dicas sobre Aluguel de Tendas e Eventos no RJ" description="Acompanhe nosso blog e confira dicas exclusivas sobre aluguel de tendas, cadeiras, gelo e muito mais para o seu evento no Rio de Janeiro.">
+  <main class="blog-index">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><span aria-current="page">Blog</span></li>
+        </ol>
+      </nav>
+
+      <header class="blog-header">
+        <h1>Blog - Dicas sobre Aluguel de Tendas e Eventos no RJ</h1>
+        <p>Tudo o que você precisa saber para organizar o evento perfeito, com conforto e segurança.</p>
+      </header>
+
+      <section class="blog-grid">
+        {posts.map(post => (
+          <article class="blog-card">
+            <a href={post.url} class="card-link">
+              <div class="card-image">
+                <img src={post.image} alt={post.title} loading="lazy" />
+              </div>
+              <div class="card-content">
+                <time datetime={post.date}>{post.date}</time>
+                <h2>{post.title}</h2>
+                <p>{post.description}</p>
+                <span class="read-more">Ler artigo completo &rarr;</span>
+              </div>
+            </a>
+          </article>
+        ))}
+      </section>
+
+      <nav class="pagination" aria-label="Paginação">
+        <ul class="pagination-list">
+          <li><a href="#" class="page-link active" aria-current="page">1</a></li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  :root {
+    --color-bg: #F8FAFC;
+    --color-text: #0F172A;
+    --color-primary: #F59E0B;
+    --color-primary-dark: #D97706;
+    --color-card-bg: #FFFFFF;
+    --color-text-light: #64748B;
+  }
+
+  .blog-index {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 2rem 0;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: ">";
+    color: var(--color-text-light);
+  }
+
+  .breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .blog-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .blog-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .blog-header p {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .blog-card {
+    background: var(--color-card-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card-image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background-color: #E2E8F0;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover .card-image img {
+    transform: scale(1.05);
+  }
+
+  .card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .card-content time {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .card-content h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+    color: var(--color-text);
+  }
+
+  .card-content p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+    flex-grow: 1;
+  }
+
+  .read-more {
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+
+  .blog-card:hover .read-more {
+    color: var(--color-primary-dark);
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pagination-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background: var(--color-card-bg);
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  .page-link:hover {
+    background: #E2E8F0;
+  }
+
+  .page-link.active {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .blog-header h1 {
+      font-size: 2rem;
+    }
+    
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

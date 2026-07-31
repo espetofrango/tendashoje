@@ -47,7 +47,7 @@ const imageURL = new URL('/logo.png', canonicalURL);
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 
 	<!-- Schema.org JSON-LD -->
 	<script type="application/ld+json">
@@ -113,7 +113,7 @@ const imageURL = new URL('/logo.png', canonicalURL);
 					<li><a href="#servicos" class="nav-link">Serviços</a></li>
 					<li><a href="#como-funciona" class="nav-link">Como Funciona</a></li>
 					<li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-					<li><a href="#precos" class="nav-link">Preços</a></li>
+					<li><a href="#modelos" class="nav-link">Modelos</a></li>
 					<li><a href="#blog" class="nav-link">Blog</a></li>
 				</ul>
 				<a href="https://wa.me/5521999999999?text=Olá,%20preciso%20de%20uma%20tenda%20hoje!" class="cta-button" target="_blank" rel="noopener noreferrer">
@@ -183,7 +183,7 @@ const imageURL = new URL('/logo.png', canonicalURL);
 		--color-text-light: #FFFFFF;
 		--color-text-muted: #334155;
 		--color-border: rgba(15, 23, 42, 0.08);
-		--font-display: 'Syne', sans-serif;
+		--font-display: 'Montserrat', sans-serif;
 		--font-body: 'DM Sans', sans-serif;
 		--radius: 16px;
 		--radius-sm: 8px;
@@ -250,11 +250,11 @@ const imageURL = new URL('/logo.png', canonicalURL);
 	}
 
 	.header.scrolled {
-		background: rgba(255, 255, 255, 0.85);
+		background: rgba(15, 23, 42, 0.92);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
-		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-		border-bottom: 1px solid var(--color-border);
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.header-container {
@@ -286,13 +286,21 @@ const imageURL = new URL('/logo.png', canonicalURL);
 
 	.nav-link {
 		font-weight: 500;
-		color: var(--color-text);
+		color: #F8FAFC;
 		transition: color 0.2s ease;
 		font-size: 1rem;
 	}
 
 	.nav-link:hover {
-		color: var(--color-accent);
+		color: #F59E0B;
+	}
+
+	.hamburger-line {
+		width: 100%;
+		height: 3px;
+		background-color: #F8FAFC;
+		border-radius: 3px;
+		transition: all 0.3s ease;
 	}
 
 	.cta-button {
@@ -370,6 +378,7 @@ const imageURL = new URL('/logo.png', canonicalURL);
 			font-size: 1.5rem;
 			font-family: var(--font-display);
 			font-weight: 700;
+			color: var(--color-text);
 		}
 
 		/* Hamburger Animation */

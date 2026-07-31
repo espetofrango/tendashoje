@@ -3,92 +3,80 @@
 
 const phoneNumber = "5521900000000";
 
-const plans = [
+const models = [
   {
-    name: "Básico",
-    price: "A partir de R$ 150",
-    description: "Tenda simples",
-    highlight: false,
+    name: "Tendas Pantográficas",
+    image: "/images/tendas-aluguel-rj.png",
+    alt: "Tendas pantográficas para eventos no RJ",
+    description: "Tendas de alta resistência com estrutura reforçada. Perfeitas para eventos de maior porte e uso prolongado.",
     features: [
-      { text: "Tenda sanfonada 3x3", included: true },
-      { text: "Montagem inclusa", included: true },
-      { text: "Entrega RJ", included: true },
-      { text: "Suporte via WhatsApp", included: true },
-      { text: "Mesas e cadeiras incluídas", included: false },
-      { text: "Cobertura para chuva reforçada", included: false }
+      { text: "Estrutura reforçada de alta resistência", included: true },
+      { text: "Perfeitas para eventos de grande porte", included: true },
+      { text: "Resistentes a sol e chuva", included: true },
+      { text: "Montagem e desmontagem inclusas", included: true }
     ],
     cta: "Solicitar Orçamento",
-    message: "Olá, gostaria de saber mais sobre o plano Básico."
+    message: "Olá, gostaria de um orçamento para tendas pantográficas."
   },
   {
-    name: "Completo",
-    badge: "Mais popular",
-    price: "A partir de R$ 350",
-    description: "Pacote completo",
-    highlight: true,
+    name: "Tenda Piramidal",
+    image: "/images/aluguel-de-barracas-para-feiras-e-eventos.png",
+    alt: "Tenda piramidal para festas e eventos no RJ",
+    description: "Cobertura elegante em formato de pirâmide, ideal para feiras, estandes e eventos que precisam de destaque.",
     features: [
-      { text: "Tenda sanfonada 5x5", included: true },
-      { text: "Montagem + desmontagem", included: true },
-      { text: "Entrega RJ + região metropolitana", included: true },
-      { text: "Mesas e cadeiras incluídas", included: true },
-      { text: "Cobertura para chuva reforçada", included: true },
-      { text: "WhatsApp prioritário", included: true }
+      { text: "Formato piramidal elegante", included: true },
+      { text: "Ideal para feiras e estandes", included: true },
+      { text: "Montagem rápida e fácil", included: true },
+      { text: "Diversos tamanhos disponíveis", included: true }
     ],
-    cta: "Quero este pacote",
-    message: "Olá, gostaria de contratar o pacote Completo."
+    cta: "Solicitar Orçamento",
+    message: "Olá, gostaria de um orçamento para tenda piramidal."
   },
   {
-    name: "Premium",
-    price: "Sob consulta",
-    description: "Evento personalizado",
-    highlight: false,
+    name: "Lonas Tipo Circo",
+    image: "/images/lona-de-circo-rj.png",
+    alt: "Lona tipo circo para eventos no RJ",
+    description: "Lonas de grande cobertura no estilo circo, perfeitas para eventos amplos com muita proteção e visual marcante.",
     features: [
-      { text: "Tendas múltiplas", included: true },
-      { text: "Projeto personalizado", included: true },
-      { text: "Atendimento VIP", included: true },
-      { text: "Mesas, cadeiras e decoração", included: true },
-      { text: "Seguro e backup de estrutura", included: true },
-      { text: "Gerente dedicado", included: true }
+      { text: "Grande área de cobertura", included: true },
+      { text: "Visual marcante estilo circo", included: true },
+      { text: "Ideal para eventos amplos", included: true },
+      { text: "Proteção contra sol e chuva", included: true }
     ],
-    cta: "Falar com especialista",
-    message: "Olá, gostaria de falar com um especialista sobre o pacote Premium."
+    cta: "Solicitar Orçamento",
+    message: "Olá, gostaria de um orçamento para lona tipo circo."
   }
 ];
 ---
 
-<section class="pricing-section" id="precos">
+<section class="pricing-section" id="modelos">
   <div class="pricing-container">
     <div class="pricing-header fade-up">
-      <span class="label">NOSSOS PLANOS</span>
-      <h2>Escolha o Pacote Ideal para Seu Evento</h2>
-      <p>Oferecemos opções flexíveis para todos os tamanhos de evento.</p>
+      <span class="label">NOSSOS MODELOS</span>
+      <h2>Escolha o Modelo Ideal para Seu Evento</h2>
+      <p>Tendas pantográficas, piramidais e lonas tipo circo para todos os tipos de eventos no Rio de Janeiro.</p>
     </div>
 
     <div class="pricing-grid">
-      {plans.map((plan, index) => (
-        <div 
-          class={`pricing-card fade-up ${plan.highlight ? 'highlight' : ''}`}
+      {models.map((model, index) => (
+        <div
+          class="pricing-card fade-up"
           style={`--delay: ${index * 0.15}s`}
         >
-          {plan.badge && <div class="badge">{plan.badge}</div>}
-          
+          <div class="card-image">
+            <img src={model.image} alt={model.alt} />
+          </div>
+
           <div class="card-header">
-            <h3>{plan.name}</h3>
-            <p class="description">{plan.description}</p>
-            <div class="price">
-              <span>{plan.price}</span>
-            </div>
+            <h3>{model.name}</h3>
+            <p class="description">{model.description}</p>
           </div>
 
           <div class="card-body">
             <ul class="features-list">
-              {plan.features.map(feature => (
+              {model.features.map(feature => (
                 <li class={feature.included ? 'included' : 'excluded'}>
-                  {feature.included ? (
-                    <svg class="icon check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  ) : (
-                    <svg class="icon cross" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                  )}
+                  <svg class="icon check" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   <span>{feature.text}</span>
                 </li>
               ))}
@@ -96,13 +84,13 @@ const plans = [
           </div>
 
           <div class="card-footer">
-            <a 
-              href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(plan.message)}`} 
-              target="_blank" 
+            <a
+              href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(model.message)}`}
+              target="_blank"
               rel="noopener noreferrer"
               class="cta-btn"
             >
-              {plan.cta}
+              {model.cta}
             </a>
           </div>
         </div>
@@ -173,91 +161,59 @@ const plans = [
     background: #FFFFFF;
     border-radius: 16px;
     border: 1px solid rgba(15, 23, 42, 0.1);
-    padding: 2.5rem 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     height: 100%;
     position: relative;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
   }
 
-  .pricing-card:not(.highlight):hover {
+  .pricing-card:hover {
     border-color: #F59E0B;
     box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.2), 0 8px 10px -6px rgba(245, 158, 11, 0.1);
     transform: translateY(-5px);
   }
 
-  .pricing-card.highlight {
-    background: #F59E0B;
-    color: #FFFFFF;
-    border: none;
-    transform: scale(1);
-    box-shadow: 0 20px 25px -5px rgba(245, 158, 11, 0.3), 0 10px 10px -5px rgba(245, 158, 11, 0.1);
-    z-index: 1;
+  .card-image {
+    margin: -1.5rem -1.5rem 1.5rem;
+    height: 200px;
+    overflow: hidden;
   }
 
-  @media (min-width: 768px) {
-    .pricing-card.highlight {
-      transform: scale(1.05);
-    }
-    .pricing-card.highlight:hover {
-      transform: scale(1.08);
-    }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
   }
 
-  .badge {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #0F172A;
-    color: #FFFFFF;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.5rem 1.25rem;
-    border-radius: 9999px;
-    white-space: nowrap;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  .pricing-card:hover .card-image img {
+    transform: scale(1.05);
   }
 
   .card-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-    padding-bottom: 2rem;
-  }
-
-  .highlight .card-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
   }
 
   .card-header h3 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: inherit;
-  }
-
-  .pricing-card:not(.highlight) .card-header h3 {
     color: #0F172A;
   }
 
   .description {
-    font-size: 0.875rem;
-    margin-bottom: 1rem;
-    opacity: 0.8;
-  }
-
-  .price {
-    font-size: 1.5rem;
-    font-weight: 800;
-  }
-
-  .pricing-card:not(.highlight) .price {
-    color: #0F172A;
+    font-size: 0.9375rem;
+    margin-bottom: 0;
+    color: #64748B;
+    line-height: 1.6;
   }
 
   .card-body {
@@ -270,7 +226,7 @@ const plans = [
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
   .features-list li {
@@ -279,9 +235,6 @@ const plans = [
     gap: 0.75rem;
     font-size: 0.9375rem;
     line-height: 1.5;
-  }
-
-  .pricing-card:not(.highlight) .features-list li {
     color: #334155;
   }
 
@@ -297,16 +250,8 @@ const plans = [
     color: #25D366;
   }
 
-  .highlight .icon.check {
-    color: #FFFFFF;
-  }
-
-  .icon.cross {
-    color: #EF4444;
-  }
-
   .card-footer {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
   }
 
   .cta-btn {
@@ -319,27 +264,13 @@ const plans = [
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1rem;
-  }
-
-  .pricing-card:not(.highlight) .cta-btn {
     background: #F1F5F9;
     color: #0F172A;
   }
 
-  .pricing-card:not(.highlight) .cta-btn:hover {
+  .cta-btn:hover {
     background: #E2E8F0;
     color: #F59E0B;
-  }
-
-  .highlight .cta-btn {
-    background: #FFFFFF;
-    color: #F59E0B;
-  }
-
-  .highlight .cta-btn:hover {
-    background: #F8FAFC;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 
   /* Animation Styles */

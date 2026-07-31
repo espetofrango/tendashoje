@@ -26,9 +26,9 @@ const services = [
     icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>`
   },
   {
-    title: "Mesas e Cadeiras",
-    description: "Além de tendas, oferecemos aluguel de mesas e cadeiras para complementar a estrutura do seu evento.",
-    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18"/><path d="M3 14v4"/><path d="M21 14v4"/><path d="M6 10v10"/><path d="M18 10v10"/></svg>`
+    title: "Mini Palco para Pequenos Eventos",
+    description: "Palcos compactos e seguros para shows, apresentações e cerimônias em eventos menores. Montagem rápida e profissional.",
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 10 5L2 9"/><path d="m22 4-10 5 10 0"/><path d="m2 14 10 5 10-5"/><path d="m2 19 10 5 10-5"/></svg>`
   }
 ];
 ---
@@ -63,6 +63,9 @@ const services = [
   }
 
   .features-section {
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
     background-color: var(--bg-light);
     padding: 5rem 1.5rem;
     overflow: hidden;
@@ -74,6 +77,8 @@ const services = [
   }
 
   .header {
+    position: relative;
+    z-index: 2;
     text-align: center;
     margin-bottom: 4rem;
   }
@@ -98,7 +103,8 @@ const services = [
 
   .subtitle {
     font-size: 1.125rem;
-    color: var(--color-muted);
+    color: #334155;
+    opacity: 1;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.5;

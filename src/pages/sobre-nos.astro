@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Sobre Nós | Tendas Hoje - Aluguel de Tendas no Rio de Janeiro';
+const description = 'Há mais de 20 anos no mercado de festas e eventos, a Tendas Hoje é especialista em aluguel de tendas para eventos no Rio de Janeiro. Conheça a nossa história.';
+---
+
+<Layout title={title} description={description}>
+  <main class="about-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><span aria-current="page">Sobre Nós</span></li>
+        </ol>
+      </nav>
+
+      <header class="page-header">
+        <h1>Sobre a Tendas Hoje</h1>
+        <p class="subtitle">Aluguel de tendas para festas e eventos no Rio de Janeiro</p>
+      </header>
+
+      <div class="about-content">
+        <section>
+          <h2>Há mais de 20 anos no mercado de festas e eventos</h2>
+          <p>Há mais de 20 anos, a Tendas Hoje atua no mercado de festas e eventos no Rio de Janeiro. O que começou como um pequeno negócio de estruturas para eventos cresceu graças a um compromisso simples: entregar tendas de qualidade, com montagem rápida e atendimento que resolve de verdade.</p>
+          <p>Nosso lema reflete essa missão: <strong>"Precisa de tenda? Resolvemos hoje."</strong></p>
+        </section>
+
+        <section>
+          <h2>O que fazemos</h2>
+          <p>Somos especialistas no aluguel de tendas sanfonadas, pantográficas, piramidais, lonas tipo circo e mini palcos para eventos de todos os tamanhos. Atendemos desde pequenas reuniões familiares até grandes celebrações, sempre com estruturas seguras, limpas e montadas por uma equipe experiente.</p>
+        </section>
+
+        <section>
+          <h2>Por que escolher a Tendas Hoje</h2>
+          <ul>
+            <li><strong>Experiência:</strong> mais de 20 anos de atuação no mercado de eventos.</li>
+            <li><strong>Pronta entrega:</strong> estrutura disponível com agilidade.</li>
+            <li><strong>Montagem inclusa:</strong> nossa equipe cuida da instalação e desmontagem.</li>
+            <li><strong>Atendimento rápido:</strong> orçamentos ágeis pelo WhatsApp.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Nosso compromisso</h2>
+          <p>Nosso compromisso é garantir que cada cliente receba exatamente a estrutura que precisa, no prazo combinado e com o melhor custo-benefício do mercado. É assim que construímos a confiança de quem realiza eventos no Rio de Janeiro.</p>
+          <p>Se você precisa de tenda para o seu próximo evento, fale conosco. Vamos resolver hoje.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .about-page {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    padding: 8rem 1.5rem 5rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: #64748B;
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: ">";
+    color: #64748B;
+  }
+
+  .breadcrumb a {
+    color: #F59E0B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #D97706;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #0F172A;
+  }
+
+  .page-header .subtitle {
+    color: #64748B;
+    font-size: 1.125rem;
+  }
+
+  .about-content {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #F59E0B;
+    line-height: 1.8;
+    font-size: 1.0625rem;
+  }
+
+  .about-content section {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-content section:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0F172A;
+  }
+
+  .about-content p {
+    margin-bottom: 1rem;
+  }
+
+  .about-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .about-content {
+      padding: 1.5rem;
+    }
+  }
+</style>

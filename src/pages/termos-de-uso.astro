@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Termos de Uso | Tendas Hoje';
+const description = 'Termos e condições de uso do site e dos serviços de aluguel de tendas para eventos da Tendas Hoje no Rio de Janeiro. Leia antes de contratar.';
+---
+
+<Layout title={title} description={description}>
+  <main class="legal-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><span aria-current="page">Termos de Uso</span></li>
+        </ol>
+      </nav>
+
+      <header class="page-header">
+        <h1>Termos de Uso</h1>
+        <p class="last-updated">Última atualização: 05 de Agosto de 2026</p>
+      </header>
+
+      <div class="legal-content">
+        <p>Estes Termos de Uso regulam o acesso e a utilização do site e dos serviços de aluguel de tendas e estruturas para eventos prestados pela Tendas Hoje no Rio de Janeiro. Ao acessar este site ou contratar os nossos serviços, você concorda com os termos e condições descritos abaixo.</p>
+
+        <h2>1. Objeto</h2>
+        <p>O site tem caráter informativo e comercial, destinado à divulgação dos nossos serviços de locação de tendas sanfonadas, pantográficas, piramidais, lonas tipo circo, mini palcos e estruturas para eventos.</p>
+
+        <h2>2. Ofertas e orçamentos</h2>
+        <p>Os valores, condições e prazos apresentados no site são meramente informativos e podem variar de acordo com o tipo de estrutura, a data, o local do evento e o prazo de locação. O orçamento somente será considerado válido após a sua confirmação expressa por um dos nossos atendentes.</p>
+
+        <h2>3. Contratação</h2>
+        <p>A contratação dos serviços ocorre mediante a aceitação do orçamento e o pagamento de sinal, quando aplicável. A reserva da estrutura estará sujeita à disponibilidade e à confirmação da data desejada.</p>
+
+        <h2>4. Obrigações do contratante</h2>
+        <ul>
+          <li>Informar corretamente os dados do evento, incluindo data, local, dimensões e condições do terreno.</li>
+          <li>Garantir o acesso da nossa equipe e dos veículos de transporte ao local do evento.</li>
+          <li>Não utilizar as estruturas para fins distintos daqueles previstos na contratação.</li>
+          <li>Responsabilizar-se por danos causados às estruturas por mau uso, salvo desgaste natural.</li>
+        </ul>
+
+        <h2>5. Responsabilidades</h2>
+        <p>Seremos responsáveis pela instalação segura e pela qualidade das estruturas locadas. Eventos climáticos adversos e condições de terreno inadequadas podem ensejar o adiamento ou a readequação da montagem, que será comunicada com a maior antecedência possível.</p>
+
+        <h2>6. Propriedade intelectual</h2>
+        <p>Todo o conteúdo deste site, incluindo textos, imagens, logotipos e marca, é de propriedade da Tendas Hoje e não pode ser reproduzido ou utilizado sem autorização prévia por escrito.</p>
+
+        <h2>7. Limitação de responsabilidade</h2>
+        <p>O conteúdo do site é disponibilizado "como está". A Tendas Hoje não se responsabiliza por decisões tomadas com base exclusivamente nas informações aqui publicadas sem a confirmação de um orçamento.</p>
+
+        <h2>8. Legislação aplicável</h2>
+        <p>Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil, e o foro competente para dirimir eventuais controvérsias é o da comarca da cidade do Rio de Janeiro.</p>
+
+        <h2>9. Alterações</h2>
+        <p>Estes Termos podem ser alterados a qualquer momento. A versão atualizada estará sempre disponível nesta página, sendo recomendável a sua consulta periódica.</p>
+
+        <h2>10. Contato</h2>
+        <p>Para esclarecimentos sobre estes Termos de Uso, entre em contato conosco através do nosso WhatsApp ou pelos canais de atendimento disponíveis no site.</p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .legal-page {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    padding: 8rem 1.5rem 5rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: #64748B;
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: ">";
+    color: #64748B;
+  }
+
+  .breadcrumb a {
+    color: #F59E0B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #D97706;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #0F172A;
+  }
+
+  .last-updated {
+    color: #64748B;
+    font-size: 0.9375rem;
+  }
+
+  .legal-content {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #F59E0B;
+    line-height: 1.8;
+    font-size: 1.0625rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: #0F172A;
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content p {
+    margin-bottom: 1rem;
+  }
+
+  .legal-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .legal-content {
+      padding: 1.5rem;
+    }
+  }
+</style>

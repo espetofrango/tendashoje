@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Política de Privacidade | Tendas Hoje';
+const description = 'Saiba como a Tendas Hoje coleta, utiliza e protege os seus dados pessoais ao utilizar nosso site de aluguel de tendas para eventos no Rio de Janeiro.';
+---
+
+<Layout title={title} description={description}>
+  <main class="legal-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><span aria-current="page">Política de Privacidade</span></li>
+        </ol>
+      </nav>
+
+      <header class="page-header">
+        <h1>Política de Privacidade</h1>
+        <p class="last-updated">Última atualização: 05 de Agosto de 2026</p>
+      </header>
+
+      <div class="legal-content">
+        <p>A Tendas Hoje ("nós", "nosso" ou "empresa"), empresa de aluguel de tendas e estruturas para eventos no Rio de Janeiro, valoriza a sua privacidade e está comprometida com a proteção dos seus dados pessoais. Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos as informações fornecidas por você ao utilizar o nosso site e os nossos serviços.</p>
+
+        <h2>1. Informações que coletamos</h2>
+        <p>Podemos coletar as seguintes informações quando você interage com o nosso site ou com os nossos canais de atendimento:</p>
+        <ul>
+          <li>Dados de identificação: nome, telefone, endereço de e-mail.</li>
+          <li>Dados do evento: data, local, tipo e número estimado de convidados.</li>
+          <li>Dados de navegação: endereço IP, tipo de navegador, páginas visitadas e tempo de permanência.</li>
+          <li>Mensagens enviadas por meio do WhatsApp, formulários de contato ou outros canais.</li>
+        </ul>
+
+        <h2>2. Como utilizamos as suas informações</h2>
+        <p>Utilizamos os seus dados para:</p>
+        <ul>
+          <li>Responder às suas solicitações de orçamento e prestar informações sobre os nossos serviços.</li>
+          <li>Elaborar propostas comerciais e contratos de locação de tendas.</li>
+          <li>Melhorar a experiência de navegação e a qualidade dos nossos serviços.</li>
+          <li>Cumprir obrigações legais e regulatórias.</li>
+        </ul>
+
+        <h2>3. Compartilhamento de informações</h2>
+        <p>Não vendemos, alugamos ou compartilhamos os seus dados pessoais com terceiros, exceto quando necessário para a prestação dos serviços contratados, para o cumprimento de obrigações legais ou mediante autorização expressa sua.</p>
+
+        <h2>4. Armazenamento e segurança</h2>
+        <p>Adotamos medidas técnicas e organizacionais adequadas para proteger os seus dados contra acessos não autorizados, alterações, divulgação ou destruição. Os dados são armazenados somente pelo tempo necessário para as finalidades descritas nesta política.</p>
+
+        <h2>5. Seus direitos</h2>
+        <p>Nos termos da Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018), você tem o direito de solicitar acesso, correção, exclusão, portabilidade e revogação do consentimento dos seus dados pessoais. Para exercer esses direitos, entre em contato conosco pelos canais de atendimento.</p>
+
+        <h2>6. Cookies</h2>
+        <p>O nosso site pode utilizar cookies e tecnologias semelhantes para melhorar a navegação, analisar o tráfego e personalizar o conteúdo. Você pode configurar o seu navegador para recusar cookies ou alertá-lo quando estiverem sendo utilizados.</p>
+
+        <h2>7. Alterações nesta política</h2>
+        <p>Podemos atualizar esta Política de Privacidade periodicamente. Recomendamos que você revise esta página regularmente. Alterações significativas serão comunicadas por meio dos nossos canais oficiais.</p>
+
+        <h2>8. Contato</h2>
+        <p>Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento dos seus dados, entre em contato conosco através do nosso WhatsApp ou pelos canais de atendimento disponíveis no site.</p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .legal-page {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    padding: 8rem 1.5rem 5rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: #64748B;
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: ">";
+    color: #64748B;
+  }
+
+  .breadcrumb a {
+    color: #F59E0B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #D97706;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #0F172A;
+  }
+
+  .last-updated {
+    color: #64748B;
+    font-size: 0.9375rem;
+  }
+
+  .legal-content {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #F59E0B;
+    line-height: 1.8;
+    font-size: 1.0625rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: #0F172A;
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content p {
+    margin-bottom: 1rem;
+  }
+
+  .legal-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .legal-content {
+      padding: 1.5rem;
+    }
+  }
+</style>

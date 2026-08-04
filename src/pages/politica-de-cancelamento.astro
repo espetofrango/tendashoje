@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Política de Cancelamento | Tendas Hoje';
+const description = 'Condições de cancelamento, remarcação e reembolso para reservas de aluguel de tendas para eventos da Tendas Hoje no Rio de Janeiro.';
+---
+
+<Layout title={title} description={description}>
+  <main class="legal-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><span aria-current="page">Política de Cancelamento</span></li>
+        </ol>
+      </nav>
+
+      <header class="page-header">
+        <h1>Política de Cancelamento</h1>
+        <p class="last-updated">Última atualização: 05 de Agosto de 2026</p>
+      </header>
+
+      <div class="legal-content">
+        <p>Esta Política de Cancelamento define as condições para cancelamento, remarcação e reembolso das reservas de tendas e estruturas para eventos realizadas junto à Tendas Hoje no Rio de Janeiro.</p>
+
+        <h2>1. Cancelamento de reservas</h2>
+        <p>O contratante poderá solicitar o cancelamento da reserva, observadas as condições abaixo:</p>
+        <ul>
+          <li>Cancelamento com mais de 15 (quinze) dias de antecedência: reembolso integral do valor pago.</li>
+          <li>Cancelamento entre 7 (sete) e 15 (quinze) dias de antecedência: reembolso de 50% (cinquenta por cento) do valor pago.</li>
+          <li>Cancelamento com menos de 7 (sete) dias de antecedência: reembolso de 20% (vinte por cento) do valor pago.</li>
+        </ul>
+
+        <h2>2. Remarcação</h2>
+        <p>O contratante poderá solicitar a remarcação da data do evento, sujeita à disponibilidade de estrutura e de agenda. Remarcações são isentas de multa quando solicitadas com até 7 (sete) dias de antecedência. Cada reserva poderá ser remarcada em até 1 (uma) vez.</p>
+
+        <h2>3. Reembolsos</h2>
+        <p>O reembolso será processado na mesma forma de pagamento utilizada na contratação ou por transferência bancária, no prazo de até 10 (dez) dias úteis após a confirmação do cancelamento.</p>
+
+        <h2>4. Cancelamento pela Tendas Hoje</h2>
+        <p>Na hipótese de cancelamento por motivos de força maior, condições climáticas extremas ou impossibilidade operacional de montagem, o valor integral pago será devolvido, ou a reserva poderá ser remarcada sem custo adicional, conforme preferência do contratante.</p>
+
+        <h2>5. No-show</h2>
+        <p>A ausência da nossa equipe ou a impossibilidade de acesso ao local no dia do evento poderá caracterizar no-show, ficando a reserva sujeita às condições de cancelamento acima descritas.</p>
+
+        <h2>6. Pagamentos e sinais</h2>
+        <p>O valor pago a título de sinal poderá ser perdido na hipótese de cancelamento pelo contratante, nos percentuais indicados no item 1 desta política, salvo acordo diverso firmado por escrito.</p>
+
+        <h2>7. Contato</h2>
+        <p>Para solicitar cancelamento ou remarcação, entre em contato conosco pelo WhatsApp com a maior antecedência possível, informando o número do pedido ou o nome do contratante.</p>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .legal-page {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    padding: 8rem 1.5rem 5rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: #64748B;
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: ">";
+    color: #64748B;
+  }
+
+  .breadcrumb a {
+    color: #F59E0B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #D97706;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #0F172A;
+  }
+
+  .last-updated {
+    color: #64748B;
+    font-size: 0.9375rem;
+  }
+
+  .legal-content {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #F59E0B;
+    line-height: 1.8;
+    font-size: 1.0625rem;
+  }
+
+  .legal-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2rem 0 1rem;
+    color: #0F172A;
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content p {
+    margin-bottom: 1rem;
+  }
+
+  .legal-content ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .legal-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .legal-content {
+      padding: 1.5rem;
+    }
+  }
+</style>

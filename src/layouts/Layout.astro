@@ -5,8 +5,8 @@ export interface Props {
 }
 
 const { 
-	title = "Aluguel de Tendas para Eventos RJ | Tendas Hoje - Precisa de tenda? Resolvemos hoje.", 
-	description = "Aluguel de tendas para eventos no Rio de Janeiro. Precisa de tenda? Resolvemos hoje! Especialistas em montagem rápida de tendas, mesas e cadeiras (Marcelo mesas). Atendimento rápido e seguro."
+	title = "Tendas Hoje: Sua festa coberta, hoje! | Aluguel de Tendas para Eventos RJ", 
+	description = "Transformamos seu evento em um sucesso coberto! Aluguel de tendas no Rio de Janeiro com pronta entrega e atendimento que resolve. Precisa de tenda? Resolvemos hoje!"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://tendashoje.com.br');
@@ -60,10 +60,10 @@ const imageURL = new URL('/logo.png', canonicalURL);
 			"telephone": "+5521999999999",
 			"address": {
 				"@type": "PostalAddress",
-				"streetAddress": "Rua Exemplo, 123",
+				"streetAddress": "Avenida Brasil, s/n - Deodoro",
 				"addressLocality": "Rio de Janeiro",
 				"addressRegion": "RJ",
-				"postalCode": "00000-000",
+				"postalCode": "20000-000",
 				"addressCountry": "BR"
 			},
 			"geo": {
@@ -79,17 +79,16 @@ const imageURL = new URL('/logo.png', canonicalURL);
 					"Wednesday",
 					"Thursday",
 					"Friday",
-					"Saturday",
-					"Sunday"
+					"Saturday"
 				],
-				"opens": "00:00",
-				"closes": "23:59"
+				"opens": "09:00",
+				"closes": "18:00"
 			},
 			"sameAs": [
 				"https://www.facebook.com/tendashoje",
 				"https://www.instagram.com/tendashoje"
 			],
-			"description": "Aluguel de tendas para eventos no Rio de Janeiro. Precisa de tenda? Resolvemos hoje! Também oferecemos aluguel de mesas e cadeiras Marcelo mesas."
+			"description": "Transformamos seu evento em um sucesso coberto! Aluguel de tendas para eventos no Rio de Janeiro com pronta entrega, montagem inclusa e atendimento que resolve. Precisa de tenda? Resolvemos hoje!"
 		}
 	</script>
 </head>

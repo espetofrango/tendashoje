@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Contato | Tendas Hoje - Aluguel de Tendas no Rio de Janeiro';
+const description = 'Fale com a Tendas Hoje pelo WhatsApp ou telefone. Aluguel de tendas para eventos em Deodoro, Rio de Janeiro. Atendimento de segunda a sábado, das 9h às 18h.';
+---
+
+<Layout title={title} description={description}>
+  <main class="contact-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><span aria-current="page">Contato</span></li>
+        </ol>
+      </nav>
+
+      <header class="page-header">
+        <h1>Fale Conosco</h1>
+        <p class="subtitle">Precisa de tenda? Resolvemos hoje!</p>
+      </header>
+
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <h2>WhatsApp</h2>
+          <p>Atendimento rápido e orçamento na hora.</p>
+          <a class="card-button whatsapp" href="https://wa.me/5521999999999?text=Olá!%20Gostaria%20de%20um%20orçamento%20de%20tenda" target="_blank" rel="noopener noreferrer">
+            Chamar no WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <h2>Telefone</h2>
+          <p>Ligue e fale com um de nossos atendentes.</p>
+          <a class="card-button phone" href="tel:+5521999999999">(21) 99999-9999</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h2>Endereço</h2>
+          <p>Avenida Brasil, s/n - Deodoro,<br />Rio de Janeiro - RJ</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h2>Horário</h2>
+          <p>Segunda a sábado<br />das 09h às 18h</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .contact-page {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    padding: 8rem 1.5rem 5rem;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: #64748B;
+  }
+
+  .breadcrumb ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb li:not(:last-child)::after {
+    content: ">";
+    color: #64748B;
+  }
+
+  .breadcrumb a {
+    color: #F59E0B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: #D97706;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    color: #0F172A;
+  }
+
+  .page-header .subtitle {
+    color: #64748B;
+    font-size: 1.125rem;
+  }
+
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .contact-card {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #F59E0B;
+  }
+
+  .card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: #FEF3C7;
+    color: #D97706;
+  }
+
+  .card-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .contact-card h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #0F172A;
+  }
+
+  .contact-card p {
+    color: #64748B;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .card-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-button.whatsapp {
+    background-color: #25D366;
+    color: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  }
+
+  .card-button.whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  }
+
+  .card-button.phone {
+    background-color: #0F172A;
+    color: #FFFFFF;
+  }
+
+  .card-button.phone:hover {
+    background-color: #1E293B;
+  }
+
+  @media (max-width: 600px) {
+    .contact-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

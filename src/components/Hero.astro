@@ -38,7 +38,18 @@
     </div>
     
     <div class="hero-image-wrapper fade-in-up delay-6">
-      <img src="/images/tendas-aluguel-para-festas-e-eventos.png" alt="Tendas aluguel para festas e eventos no RJ" class="hero-image" />
+      <picture>
+        <source srcset="/images/tendas-aluguel-para-festas-e-eventos.webp" type="image/webp" />
+        <img
+          src="/images/tendas-aluguel-para-festas-e-eventos.png"
+          alt="Tendas aluguel para festas e eventos no RJ"
+          class="hero-image"
+          width="667"
+          height="486"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </picture>
       
       <div class="floating-card">
         <span class="stat">+127%</span>
@@ -279,6 +290,17 @@
   .delay-4 { animation-delay: 0.4s; }
   .delay-5 { animation-delay: 0.5s; }
   .delay-6 { animation-delay: 0.6s; }
+
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .noise-overlay {
+      display: none;
+    }
+    .hero-section {
+      animation: none;
+      background-size: cover;
+    }
+  }
 
   /* Desktop */
   @media (min-width: 992px) {

@@ -6,6 +6,7 @@ const phoneNumber = "5521976638007";
 const models = [
   {
     name: "Tendas Pantográficas",
+    imageWebp: "/images/tendas-aluguel-rj.webp",
     image: "/images/tendas-aluguel-rj.png",
     alt: "Tendas pantográficas para eventos no RJ",
     description: "Tendas de alta resistência com estrutura reforçada. Perfeitas para eventos de maior porte e uso prolongado.",
@@ -20,6 +21,7 @@ const models = [
   },
   {
     name: "Tenda Piramidal",
+    imageWebp: "/images/aluguel-de-barracas-para-feiras-e-eventos.webp",
     image: "/images/aluguel-de-barracas-para-feiras-e-eventos.png",
     alt: "Tenda piramidal para festas e eventos no RJ",
     description: "Cobertura elegante em formato de pirâmide, ideal para feiras, estandes e eventos que precisam de destaque.",
@@ -34,6 +36,7 @@ const models = [
   },
   {
     name: "Lonas Tipo Circo",
+    imageWebp: "/images/lona-de-circo-rj.webp",
     image: "/images/lona-de-circo-rj.png",
     alt: "Lona tipo circo para eventos no RJ",
     description: "Lonas de grande cobertura no estilo circo, perfeitas para eventos amplos com muita proteção e visual marcante.",
@@ -64,7 +67,17 @@ const models = [
           style={`--delay: ${index * 0.15}s`}
         >
           <div class="card-image">
-            <img src={model.image} alt={model.alt} />
+            <picture>
+              <source srcset={model.imageWebp} type="image/webp" />
+              <img
+                src={model.image}
+                alt={model.alt}
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+              />
+            </picture>
           </div>
 
           <div class="card-header">

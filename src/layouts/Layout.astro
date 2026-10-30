@@ -1,4 +1,6 @@
 ---
+import WhatsAppFloating from '../components/WhatsAppFloating.astro';
+
 export interface Props {
 	title?: string;
 	description?: string;
@@ -26,9 +28,9 @@ const imageURL = new URL('/logo.png', canonicalURL);
 	<!-- Canonical URL -->
 	<link rel="canonical" href={canonicalURL} />
 
-	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="/logo.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+	<!-- Favicon Otimizado -->
+	<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+	<link rel="apple-touch-icon" href="/logo.png" />
 	
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
@@ -44,10 +46,14 @@ const imageURL = new URL('/logo.png', canonicalURL);
 	<meta property="twitter:description" content={description} />
 	<meta property="twitter:image" content={imageURL} />
 
-	<!-- Google Fonts -->
+	<!-- Google Fonts Otimizado (Não bloqueia renderização) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Montserrat:wght@400;700;800&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Montserrat:wght@400;700;800&display=swap" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Montserrat:wght@400;700;800&display=swap">
+	</noscript>
 
 	<!-- Schema.org JSON-LD -->
 	<script type="application/ld+json">
@@ -97,7 +103,10 @@ const imageURL = new URL('/logo.png', canonicalURL);
 	<header class="header" id="header">
 		<div class="header-container">
 			<a href="/" class="logo">
-				<img src="/logo.png" alt="Tendas Hoje Logo" />
+				<picture>
+					<source srcset="/logo.webp" type="image/webp" />
+					<img src="/logo.png" alt="Tendas Hoje Logo" width="180" height="45" decoding="async" />
+				</picture>
 			</a>
 
 			<button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
@@ -128,6 +137,9 @@ const imageURL = new URL('/logo.png', canonicalURL);
 	<main>
 		<slot />
 	</main>
+
+	<!-- Botão Flutuante Oficial do WhatsApp (Fixo e Sticky) -->
+	<WhatsAppFloating />
 
 	<script>
 		// Mobile Menu Toggle
@@ -163,7 +175,7 @@ const imageURL = new URL('/logo.png', canonicalURL);
 			} else {
 				header.classList.remove('scrolled');
 			}
-		});
+		}, { passive: true });
 	</script>
 </body>
 </html>
@@ -182,8 +194,8 @@ const imageURL = new URL('/logo.png', canonicalURL);
 		--color-text-light: #FFFFFF;
 		--color-text-muted: #334155;
 		--color-border: rgba(15, 23, 42, 0.08);
-		--font-display: 'Montserrat', sans-serif;
-		--font-body: 'DM Sans', sans-serif;
+		--font-display: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		--font-body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		--radius: 16px;
 		--radius-sm: 8px;
 		--shadow-glow: 0 0 40px rgba(245, 158, 11, 0.3);

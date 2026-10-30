@@ -44,7 +44,10 @@ const schema = {
       </header>
 
       <figure class="featured-image">
-        <img src={image} alt="Tenda para casamento ao ar livre no jardim ou na praia no RJ" loading="eager" />
+        <picture>
+          <source srcset={image.replace(/\.png$/, '.webp')} type="image/webp" />
+          <img src={image} alt="Tenda para casamento ao ar livre no jardim ou na praia no RJ" loading="eager" decoding="async" width="586" height="405" />
+        </picture>
       </figure>
 
       <div class="post-content">

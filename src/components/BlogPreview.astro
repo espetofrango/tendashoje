@@ -7,6 +7,7 @@ const posts = [
     date: '10 Ago 2026',
     category: 'Guias',
     readTime: '8 min leitura',
+    imageWebp: '/images/aluguel-de-tenda-para-eventos-no-rj.webp',
     image: '/images/aluguel-de-tenda-para-eventos-no-rj.png',
     gradient: 'linear-gradient(135deg, #0052D4, #4364F7, #6FB1FC)'
   },
@@ -17,6 +18,7 @@ const posts = [
     date: '10 Ago 2026',
     category: 'Guias',
     readTime: '8 min leitura',
+    imageWebp: '/images/aluguel-de-tenda-sanfonada-no-rio-de-janeiro.webp',
     image: '/images/aluguel-de-tenda-sanfonada-no-rio-de-janeiro.png',
     gradient: 'linear-gradient(135deg, #11998e, #38ef7d)'
   },
@@ -27,6 +29,7 @@ const posts = [
     date: '10 Ago 2026',
     category: 'Guias',
     readTime: '9 min leitura',
+    imageWebp: '/images/aluguel-de-tendas-no-rj.webp',
     image: '/images/aluguel-de-tendas-no-rj.png',
     gradient: 'linear-gradient(135deg, #FF416C, #FF4B2B)'
   },
@@ -37,6 +40,7 @@ const posts = [
     date: '10 Ago 2026',
     category: 'Casamentos',
     readTime: '10 min leitura',
+    imageWebp: '/images/aluguel-de-tendas-para-casamentos-no-rj.webp',
     image: '/images/aluguel-de-tendas-para-casamentos-no-rj.png',
     gradient: 'linear-gradient(135deg, #b24592, #f15f79)'
   },
@@ -47,6 +51,7 @@ const posts = [
     date: '10 Ago 2026',
     category: 'Corporativo',
     readTime: '12 min leitura',
+    imageWebp: '/images/aluguel-de-tendas-para-eventos-corporativos.webp',
     image: '/images/aluguel-de-tendas-para-eventos-corporativos.png',
     gradient: 'linear-gradient(135deg, #0f2027, #2c5364)'
   },
@@ -57,6 +62,7 @@ const posts = [
     date: '10 Ago 2026',
     category: 'Festas',
     readTime: '9 min leitura',
+    imageWebp: '/images/aluguel-de-tendas-para-festas-infantis-no-rj.webp',
     image: '/images/aluguel-de-tendas-para-festas-infantis-no-rj.png',
     gradient: 'linear-gradient(135deg, #f7971e, #ffd200)'
   }
@@ -76,7 +82,18 @@ const posts = [
         <article class="card fade-up" style={`transition-delay: ${index * 150}ms`}>
           <a href={post.link} class="card-link" aria-label={`Ler artigo: ${post.title}`}>
             <div class="card-image-placeholder">
-              <img src={post.image} alt={post.title} class="card-img" />
+              <picture>
+                <source srcset={post.imageWebp} type="image/webp" />
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="card-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="586"
+                  height="405"
+                />
+              </picture>
             </div>
             <div class="card-content">
               <div class="badge">{post.category}</div>
